@@ -13,6 +13,7 @@ export interface User {
   status: 'active' | 'inactive' | 'offline';
   lastActive?: string;
   avatarUrl?: string;
+  password?: string;
   createdAt: string;
 }
 

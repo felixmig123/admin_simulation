@@ -1,15 +1,8 @@
-export interface User {
-  id: string;
-  username: string;
-  email: string;
-  roleId: string;
-  avatarUrl?: string;
-  bio?: string;
-}
+import type { User } from './models';
 
 export interface LoginCredentials {
   username: string;
-  password?: string; // Optional if just for type shape
+  password?: string;
 }
 
 export interface RegisterCredentials {
@@ -17,6 +10,8 @@ export interface RegisterCredentials {
   email: string;
   password: string;
 }
+
+
 
 export interface AuthResponse {
   user: User;

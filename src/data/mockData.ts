@@ -47,6 +47,7 @@ export const mockUsers: User[] = [
     status: 'active',
     lastActive: 'Now',
     avatarUrl: 'https://ui-avatars.com/api/?name=Admin+User&background=11d4b4&color=fff',
+    password: 'admin',
     createdAt: '2023-01-01'
   },
   {
@@ -57,6 +58,7 @@ export const mockUsers: User[] = [
     status: 'offline',
     lastActive: '2 hours ago',
     avatarUrl: 'https://ui-avatars.com/api/?name=John+Doe&background=random',
+    password: 'user',
     createdAt: '2023-05-12'
   },
   {
@@ -67,6 +69,7 @@ export const mockUsers: User[] = [
     status: 'active',
     lastActive: '5 mins ago',
     avatarUrl: 'https://ui-avatars.com/api/?name=Alice+Smith&background=random',
+    password: 'user',
     createdAt: '2023-06-20'
   }
 ];

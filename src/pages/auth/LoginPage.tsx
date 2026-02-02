@@ -6,7 +6,8 @@ import { Input } from '../../components/common/Input';
 
 export const LoginPage = () => {
   const [username, setUsername] = useState('admin');
-  const [password, setPassword] = useState('password123');
+  const [password, setPassword] = useState('admin');
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const { login, isLoading } = useAuth();
   const navigate = useNavigate();
@@ -50,12 +51,19 @@ export const LoginPage = () => {
           
           <Input
             label="Password"
-            type="password"
+            type={showPassword ? "text" : "password"}
             placeholder="Enter your password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             leftIcon={<span className="material-symbols-outlined text-[20px]">lock</span>}
-            rightIcon={<span className="material-symbols-outlined text-[20px]">visibility</span>}
+            rightIcon={
+              <span 
+                className="material-symbols-outlined text-[20px] cursor-pointer hover:text-primary transition-colors select-none"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? 'visibility_off' : 'visibility'}
+              </span>
+            }
           />
 
           <div className="flex items-center justify-between mt-1">

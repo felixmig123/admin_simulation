@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { cn } from '../common/Button';
+import { useAuth } from '../../context/AuthContext';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -8,6 +9,7 @@ interface SidebarProps {
 }
 
 export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
+  const { logout } = useAuth();
   const navItems = [
     { name: 'Dashboard', path: '/admin', icon: 'dashboard', end: true },
     { name: 'Roles', path: '/admin/roles', icon: 'shield_person' },
@@ -74,7 +76,10 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
 
           {/* Bottom Actions */}
           <div className="pt-4 border-t border-[#283936]">
-            <button className="flex w-full items-center gap-3 px-3 py-2 rounded-lg text-[#9db9b4] hover:bg-[#182d29] hover:text-white transition-colors text-sm font-medium">
+            <button 
+               onClick={logout}
+               className="flex w-full items-center gap-3 px-3 py-2 rounded-lg text-[#9db9b4] hover:bg-[#182d29] hover:text-white transition-colors text-sm font-medium"
+            >
                <span className="material-symbols-outlined">logout</span>
                <span>Log Out</span>
             </button>
