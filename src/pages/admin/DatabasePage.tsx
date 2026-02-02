@@ -20,6 +20,7 @@ export const DatabasePage = () => {
 
   const fetchData = () => {
     setIsLoading(true);
+    setData([]); // Clear data to prevent type mismatches during transition
     // Add small delay to verify loading states
     setTimeout(() => {
         let result: any[] = [];
@@ -54,7 +55,7 @@ export const DatabasePage = () => {
                 u.status === 'active' ? 'bg-green-100 text-green-700' :
                 u.status === 'offline' ? 'bg-gray-100 text-gray-700' : 'bg-red-100 text-red-700'
             }`}>
-                {u.status.toUpperCase()}
+                {(u.status || 'unknown').toUpperCase()}
             </span>
         ) 
     }
@@ -66,7 +67,7 @@ export const DatabasePage = () => {
     { header: 'Users Count', accessorKey: 'userCount', className: 'text-center' },
     { 
         header: 'Permissions', 
-        render: (r: Role) => <span className="text-xs text-gray-500">{r.permissions.length} permissions</span> 
+        render: (r: Role) => <span className="text-xs text-gray-500">{r.permissions?.length ?? 0} permissions</span> 
     }
   ];
 
@@ -79,7 +80,7 @@ export const DatabasePage = () => {
   const productColumns = [
       { header: 'ID', accessorKey: 'id', className: 'w-24 font-mono text-xs' },
       { header: 'Name', accessorKey: 'name' },
-      { header: 'Price', render: (p: Product) => `$${p.price.toFixed(2)}` },
+      { header: 'Price', render: (p: Product) => `$${(p.price || 0).toFixed(2)}` },
       { header: 'Stock', accessorKey: 'stock' },
       { header: 'Status', accessorKey: 'status' }
   ];
