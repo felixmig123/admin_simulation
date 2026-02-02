@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { User, Role } from '../../types/models';
+import type { User, Role } from '../../types/models';
 import { Button } from '../common/Button';
 import { Input } from '../common/Input';
 import { localStorageService, STORAGE_KEYS } from '../../services/localStorageService';

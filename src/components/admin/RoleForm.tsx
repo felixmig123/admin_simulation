@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Role, Permission } from '../../types/models';
+import type { Role, Permission } from '../../types/models';
 import { Button } from '../common/Button';
 import { Input } from '../common/Input';
 

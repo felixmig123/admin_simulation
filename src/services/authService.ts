@@ -1,4 +1,4 @@
-import { LoginCredentials, RegisterCredentials, User, AuthResponse } from '../types/auth';
+import type { LoginCredentials, RegisterCredentials, User, AuthResponse } from '../types/auth';
 
 const STORAGE_KEY_USER = 'admin_sim_user';
 const STORAGE_KEY_TOKEN = 'admin_sim_token';
