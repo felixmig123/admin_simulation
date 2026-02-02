@@ -18,29 +18,12 @@ export const Header = ({ onMenuClick }: HeaderProps) => {
             <span className="material-symbols-outlined">menu</span>
         </button>
 
-        {/* Search Bar (Desktop) */}
-        <div className="hidden md:flex flex-1 max-w-[480px]">
-          <label className="flex flex-col w-full">
-            <div className="relative w-full">
-              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 dark:text-[#9db9b4]">
-                 <span className="material-symbols-outlined text-[20px]">search</span>
-              </div>
-              <input 
-                placeholder="Search anything..." 
-                className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-gray-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-gray-100 dark:bg-[#182d29] h-11 pl-11 pr-4 text-sm font-normal leading-normal placeholder:text-gray-500 dark:placeholder:text-[#9db9b4] transition-all"
-              />
-            </div>
-          </label>
-        </div>
+        {/* Spacer to push content to right */ }
+        <div className="flex-1" />
 
         {/* Right Actions */}
         <div className="flex items-center gap-4">
-            <button className="text-gray-500 dark:text-[#9db9b4] hover:text-primary transition-colors relative">
-                <span className="material-symbols-outlined">notifications</span>
-                <span className="absolute top-0 right-0 size-2 bg-red-500 rounded-full border-2 border-white dark:border-[#10221f]"></span>
-            </button>
-            
-            <div className="h-8 w-px bg-gray-200 dark:bg-[#283936] hidden sm:block"></div>
+
             
             <div className="flex items-center gap-3 cursor-pointer">
                 <div 
