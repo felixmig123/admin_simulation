@@ -7,6 +7,13 @@ import { ProtectedRoute } from './ProtectedRoute';
 import { LoginPage } from '../pages/auth/LoginPage';
 import { RegisterPage } from '../pages/auth/RegisterPage';
 import { NotFoundPage } from '../pages/NotFoundPage';
+import { DatabasePage } from '../pages/admin/DatabasePage';
+import { RolesPage } from '../pages/admin/RolesPage';
+import { UsersPage } from '../pages/admin/UsersPage';
+import { UserSettingsPage } from '../pages/admin/UserSettingsPage';
+import { CategoriesPage } from '../pages/admin/CategoriesPage';
+import { ProductsPage } from '../pages/admin/ProductsPage';
+import { DashboardPage } from '../pages/admin/DashboardPage';
 
 // Placeholder Place for Dashboard (We'll implement the real one in Phase 5, but we need a target)
 const DashboardPlaceholder = () => <div className="p-4"><h1>Dashboard (Coming Soon)</h1></div>;
@@ -23,13 +30,13 @@ export const AppRouter = () => {
       {/* Protected Routes */}
       <Route element={<ProtectedRoute />}>
         <Route path="/admin" element={<AdminLayout />}>
-          <Route index element={<DashboardPlaceholder />} />
-          <Route path="roles" element={<div>Roles Page</div>} />
-          <Route path="users" element={<div>Users Page</div>} />
-          <Route path="categories" element={<div>Categories Page</div>} />
-          <Route path="products" element={<div>Products Page</div>} />
-          <Route path="database" element={<div>Database Page</div>} />
-          <Route path="settings" element={<div>Settings Page</div>} />
+          <Route index element={<DashboardPage />} />
+          <Route path="roles" element={<RolesPage />} />
+          <Route path="users" element={<UsersPage />} />
+          <Route path="categories" element={<CategoriesPage />} />
+          <Route path="products" element={<ProductsPage />} />
+          <Route path="database" element={<DatabasePage />} />
+          <Route path="settings" element={<UserSettingsPage />} />
         </Route>
       </Route>
 
