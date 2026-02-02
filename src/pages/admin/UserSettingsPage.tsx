@@ -89,31 +89,34 @@ export const UserSettingsPage = () => {
       </div>
 
       <div className="bg-white dark:bg-[#111817] rounded-xl border border-gray-200 dark:border-[#283936] shadow-sm overflow-hidden">
-        <div className="p-6 border-b border-gray-200 dark:border-[#283936] flex items-center gap-6">
+      <div className="bg-white dark:bg-[#111817] rounded-xl border border-gray-200 dark:border-[#283936] shadow-sm overflow-hidden">
+        {/* Header Section */}
+        <div className="p-4 md:p-6 border-b border-gray-200 dark:border-[#283936] flex flex-col md:flex-row items-center gap-4 md:gap-6 text-center md:text-left">
             <div className="relative">
                 <div 
-                    className="size-20 rounded-full bg-cover bg-center border-2 border-white dark:border-[#10221f] shadow-lg"
+                    className="size-20 md:size-24 rounded-full bg-cover bg-center border-4 border-white dark:border-[#10221f] shadow-lg"
                     style={{ backgroundImage: `url(${user?.avatarUrl || ''})` }}
                 ></div>
-                <button className="absolute bottom-0 right-0 p-1 bg-primary text-[#10221f] rounded-full shadow-sm hover:brightness-110">
+                <button className="absolute bottom-0 right-0 p-1.5 bg-primary text-[#10221f] rounded-full shadow-sm hover:brightness-110 border-2 border-white dark:border-[#111817]">
                     <span className="material-symbols-outlined text-[16px]">edit</span>
                 </button>
             </div>
             <div>
-                <h2 className="text-lg font-bold text-gray-900 dark:text-white">{user?.username}</h2>
-                <div className="flex items-center gap-2 mt-1">
+                <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">{user?.username}</h2>
+                <div className="flex flex-col md:flex-row items-center gap-2 mt-1">
                     <span className="text-sm text-gray-500 dark:text-[#9db9b4]">{user?.email}</span>
-                    <span className="px-2 py-0.5 bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider rounded-md">
-                        {user?.roleId}
+                    <span className="hidden md:inline text-gray-300 dark:text-gray-600">•</span>
+                    <span className="px-2.5 py-0.5 bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider rounded-md">
+                        {user?.roleId?.replace('role-', '')}
                     </span>
                 </div>
             </div>
         </div>
         
-        <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="p-4 md:p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Profile Info Form */}
             <form onSubmit={handleUpdateProfile} className="flex flex-col gap-4">
-                <h3 className="text-base font-bold text-gray-900 dark:text-white">Profile Information</h3>
+                <h3 className="text-base font-bold text-gray-900 dark:text-white border-b border-gray-100 dark:border-gray-800 pb-2 mb-2">Profile Information</h3>
                 
                 <Input
                     label="Username"
@@ -131,13 +134,13 @@ export const UserSettingsPage = () => {
                 />
 
                 <div className="pt-2">
-                    <Button type="submit" isLoading={isLoading}>Save Changes</Button>
+                    <Button type="submit" isLoading={isLoading} className="w-full md:w-auto">Save Changes</Button>
                 </div>
             </form>
 
             {/* Password Change Form */}
             <form onSubmit={handleChangePassword} className="flex flex-col gap-4">
-                <h3 className="text-base font-bold text-gray-900 dark:text-white">Change Password</h3>
+                <h3 className="text-base font-bold text-gray-900 dark:text-white border-b border-gray-100 dark:border-gray-800 pb-2 mb-2">Change Password</h3>
                 
                 <Input
                     label="Current Password"
@@ -156,12 +159,13 @@ export const UserSettingsPage = () => {
                 />
 
                 <div className="pt-2">
-                    <Button variant="outline" type="submit" isLoading={isLoading} disabled={!currentPassword || !newPassword}>
+                    <Button variant="outline" type="submit" isLoading={isLoading} disabled={!currentPassword || !newPassword} className="w-full md:w-auto">
                         Update Password
                     </Button>
                 </div>
             </form>
         </div>
+      </div>
       </div>
 
     </div>

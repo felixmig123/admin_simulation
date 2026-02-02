@@ -33,8 +33,8 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
 
       {/* Sidebar Content */}
       <aside className={cn(
-        "fixed md:static inset-y-0 left-0 z-30 w-72 bg-[#10221f] border-r border-[#283936] transform transition-transform duration-300 ease-in-out flex flex-col h-full",
-        isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
+        "fixed md:static inset-y-0 left-0 z-50 w-72 bg-[#10221f] border-r border-[#283936] transform transition-transform duration-300 ease-in-out flex flex-col h-full supports-[height:100dvh]:h-[100dvh]",
+        isOpen ? "translate-x-0 shadow-2xl" : "-translate-x-full md:translate-x-0"
       )}>
         <div className="p-6 flex flex-col gap-8 h-full">
           {/* Brand */}

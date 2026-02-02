@@ -2,8 +2,19 @@
 @config "../tailwind.config.js";
 
 @layer base {
+  html, body, #root {
+    height: 100%;
+    width: 100%;
+    @apply antialiased;
+  }
+  
   body {
     @apply font-display text-gray-900 dark:text-gray-100 bg-background-light dark:bg-background-dark;
+  }
+
+  /* Selection Color */
+  ::selection {
+    @apply bg-primary/20 text-primary;
   }
 }
 
@@ -13,14 +24,15 @@
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #10221f;
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #283936;
-  border-radius: 4px;
+  @apply bg-gray-300 dark:bg-[#283936] rounded-full;
+  border: 2px solid transparent;
+  background-clip: content-box;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3b544f;
+  @apply bg-gray-400 dark:bg-[#3b544f];
 }
 
 /* Material Symbols Fill Variation */
@@ -30,6 +42,7 @@
     "wght" 400,
     "GRAD" 0,
     "opsz" 24;
+  user-select: none; /* Prevent icon text selection */
 }
 .icon-filled {
   font-variation-settings: "FILL" 1;
