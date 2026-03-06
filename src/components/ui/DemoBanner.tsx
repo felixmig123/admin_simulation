@@ -31,7 +31,7 @@ export function DemoBanner() {
             {/* Contenido derecho: Link GitHub */}
             <div className="flex items-center gap-3">
               <a
-                href="https://ejemplo.github.com"
+                href="https://github.com/felixmig123/admin_simulation"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#0d1118] hover:bg-primary/20 border border-[#324467] hover:border-primary/50 text-[#92a4c9] hover:text-white transition-all duration-200"

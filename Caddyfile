@@ -3,9 +3,16 @@
 }
 
 :{$PORT:80} {
-    root * ./dist
-    file_server
-    try_files {path} /index.html
+    # Redirigir sin trailing slash a con trailing slash
+    redir /paginas/ejemplos/admin-simulation /paginas/ejemplos/admin-simulation/ permanent
+
+    # handle_path quita el prefijo antes de buscar archivos en ./dist
+    handle_path /paginas/ejemplos/admin-simulation/* {
+        root * ./dist
+        file_server
+        try_files {path} /index.html
+    }
+
     encode gzip
 
     log {

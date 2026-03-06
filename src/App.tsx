@@ -6,7 +6,7 @@ import './index.css';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/paginas/ejemplos/admin-simulation">
       <AuthProvider>
         <div className="min-h-screen flex flex-col">
           <DemoBanner />
