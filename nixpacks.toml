@@ -1,0 +1,14 @@
+# Disable automatic providers to avoid conflicts
+providers = []
+
+[phases.setup]
+# Manually specify essential packages
+nixPkgs = ["nodejs", "caddy"] 
+# Using a pinned stable archive (NixOS 23.05) to ensure package availability and resolving
+nixArchive = "ba913eda2df8eb9cb577a4501fc0957dc51a89d3"
+
+[phases.build]
+cmds = ["npm ci", "npm run build"]
+
+[start]
+cmd = "caddy run --config Caddyfile --adapter caddyfile 2>&1"
