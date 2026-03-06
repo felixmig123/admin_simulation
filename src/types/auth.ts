@@ -1,4 +1,5 @@
 import type { User } from './models';
+export type { User };
 
 export interface LoginCredentials {
   username: string;

@@ -60,7 +60,7 @@ export function TableComponent<T>({
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200 dark:divide-[#3b544f]">
-            {data.map((item, rowIdx) => (
+            {data.map((item) => (
               <tr 
                 key={keyExtractor(item)} 
                 className="hover:bg-slate-50 dark:hover:bg-[#1c2725]/50 transition-colors group"

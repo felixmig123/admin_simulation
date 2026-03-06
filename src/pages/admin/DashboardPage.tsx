@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { localStorageService, STORAGE_KEYS } from '../../services/localStorageService';
 import { RecentActivity } from '../../components/admin/RecentActivity';
 import type { User, Product, Role } from '../../types/models';

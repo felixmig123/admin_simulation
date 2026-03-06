@@ -1,5 +1,3 @@
-import React from 'react';
-
 // Mock activity logs
 const ACTIVITY_LOGS = [
   { id: 1, user: 'admin', action: 'created a new product', target: 'Wireless Headphones', time: '2 mins ago', icon: 'add_box' },

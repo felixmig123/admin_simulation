@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { AuthLayout } from '../layouts/AuthLayout';
 import { AdminLayout } from '../layouts/AdminLayout';
@@ -15,8 +15,7 @@ import { CategoriesPage } from '../pages/admin/CategoriesPage';
 import { ProductsPage } from '../pages/admin/ProductsPage';
 import { DashboardPage } from '../pages/admin/DashboardPage';
 
-// Placeholder Place for Dashboard (We'll implement the real one in Phase 5, but we need a target)
-const DashboardPlaceholder = () => <div className="p-4"><h1>Dashboard (Coming Soon)</h1></div>;
+
 
 export const AppRouter = () => {
   return (

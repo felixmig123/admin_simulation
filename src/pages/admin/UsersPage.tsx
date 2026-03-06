@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { localStorageService, STORAGE_KEYS } from '../../services/localStorageService';
 import { TableComponent } from '../../components/common/TableComponent';
 import { Button } from '../../components/common/Button';

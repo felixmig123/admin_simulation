@@ -6,7 +6,7 @@ import { localStorageService, STORAGE_KEYS } from '../../services/localStorageSe
 import type { User } from '../../types/models';
 
 export const UserSettingsPage = () => {
-  const { user, login } = useAuth();
+  const { user } = useAuth();
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [currentPassword, setCurrentPassword] = useState('');
